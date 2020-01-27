@@ -38,7 +38,7 @@ check: install
 	@flake8
 
 test: install
-	@pip install --quiet --requirement=requirements-tests.txt
+	@pip install --requirement=requirements-tests.txt
 	@pytest --cov=pymodbus/ --cov-report term-missing
 	@coverage report --fail-under=90
 
