@@ -17,6 +17,15 @@ matrix:
     language: shell
     python: "3.7"
     script: python -m pytest  # pytest command won't be found
+  - os: windows
+    language: shell
+    before_install:
+      - choco install python --version 3.5.4
+      - python --version
+      - python -m pip install --upgrade pip
+      - pip3 install --upgrade pytest
+      - pip3 install codecov
+    env: PATH=/c/Python35:/c/Python35/Scripts:$PATH
 
 before_install:
   - python --version
