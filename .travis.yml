@@ -19,13 +19,36 @@ matrix:
     script: python -m pytest  # pytest command won't be found
   - os: windows
     language: shell
+    python: "3.5"
     before_install:
-      - choco install python --version 3.5.4
+      - choco install python --version 3.5.9
       - python --version
       - python -m pip install --upgrade pip
       - pip3 install --upgrade pytest
       - pip3 install codecov
     env: PATH=/c/Python35:/c/Python35/Scripts:$PATH
+    script: python -m pytest
+  - os: windows
+    language: shell
+    python: "3.6"
+    before_install:
+      - choco install python --version 3.6.10
+      - python --version
+      - python -m pip install --upgrade pip
+      - pip3 install --upgrade pytest
+      - pip3 install codecov
+    env: PATH=/c/Python36:/c/Python35/Scripts:$PATH
+    script: python -m pytest
+  - os: windows
+    language: shell
+    python: "3.7"
+    before_install:
+      - choco install python --version 3.7.6
+      - python --version
+      - python -m pip install --upgrade pip
+      - pip3 install --upgrade pytest
+      - pip3 install codecov
+    env: PATH=/c/Python37:/c/Python35/Scripts:$PATH
     script: python -m pytest
 
 before_install:
