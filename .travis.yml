@@ -37,7 +37,7 @@ matrix:
     language: shell
     python: "3.5"
     before_install:
-      - choco install python --version 3.5.9
+      - choco install python --version 3.5.4
       - python --version
       - python -m pip install --upgrade pip
       - pip3 install --upgrade pytest
@@ -48,7 +48,7 @@ matrix:
     language: shell
     python: "3.6"
     before_install:
-      - choco install python --version 3.6.10
+      - choco install python --version 3.6.8
       - python --version
       - python -m pip install --upgrade pip
       - pip3 install --upgrade pytest
@@ -59,7 +59,7 @@ matrix:
     language: shell
     python: "3.7"
     before_install:
-      - choco install python --version 3.7.6
+      - choco install python --version 3.7.3
       - python --version
       - python -m pip install --upgrade pip
       - pip3 install --upgrade pytest
