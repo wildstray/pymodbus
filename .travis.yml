@@ -11,12 +11,28 @@ matrix:
     osx_image: xcode9.4
     language: shell
     python: "3.6"
-    script: python -m pytest  # pytest command won't be found
+    before_install:
+        - python3 --version
+        - pip3 install -U pip
+        - pip3 install -U pytest
+        - pip3 install codecov
+        - pip3 install --requirement=requirements-checks.txt
+        - pip3 install --requirement=requirements-tests.txt
+    script: python3 -m pytest
+    after_success: python 3 -m codecov
   - os: osx
     osx_image: xcode10.2
     language: shell
     python: "3.7"
-    script: python -m pytest  # pytest command won't be found
+    before_install:
+        - python3 --version
+        - pip3 install -U pip
+        - pip3 install -U pytest
+        - pip3 install codecov
+        - pip3 install --requirement=requirements-checks.txt
+        - pip3 install --requirement=requirements-tests.txt
+    script: python3 -m pytest
+    after_success: python 3 -m codecov
   - os: windows
     language: shell
     python: "3.5"
