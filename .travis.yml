@@ -36,39 +36,39 @@ matrix:
   - os: windows
     language: shell
     python: 3.5
-    install:
+    before_install:
       - choco install python --version 3.5.4
       - python --version
       - python -m pip install --upgrade pip
       - python -m pip install pywin32
 #      - pip install --upgrade pytest
-      - python -m pip install --upgrade pytest
+#      - python -m pip install --upgrade pytest
 #      - pip3 install codecov
     env: PATH=/c/Python35:/c/Python35/Scripts:$PATH
     script: python -m pytest
   - os: windows
     language: shell
     python: 3.6
-    install:
+    before_install:
       - choco install python --version 3.6.8
       - python --version
       - python -m pip install pywin32
       - python -m pip install --upgrade pip
 #      - pip install --upgrade pytest
-      - python -m pip install --upgrade pytest
+#      - python -m pip install --upgrade pytest
 #      - pip3 install codecov
     env: PATH=/c/Python36:/c/Python35/Scripts:$PATH
     script: python -m pytest
   - os: windows
     language: shell
     python: 3.7
-    install:
+    before_install:
       - choco install python --version 3.7.3
       - python --version
       - python -m pip install pywin32
-      - python -m pip install --upgrade pytest
-#      - python -m pip install --upgrade pip
-      - pip install --upgrade pytest
+      - python -m pip install --upgrade pip
+#      - python -m pip install --upgrade pytest
+#      - pip install --upgrade pytest
 #      - pip3 install codecov
     env: PATH=/c/Python37:/c/Python35/Scripts:$PATH
     script: python -m pytest
@@ -79,12 +79,12 @@ matrix:
 #  - if [ $TRAVIS_OS_NAME = osx ]; then brew install openssl; fi
 
 install:
-  - pip install pytest
+  - python -m pip install pytest
 #  - pip install codecov
-  - pip install -U setuptools
+  - python -m pip install -U setuptools
 #  - pip install coveralls
-  - pip install --requirement=requirements-checks.txt
-  - pip install --requirement=requirements-tests.txt
+  - python -m pip install --requirement=requirements-checks.txt
+  - python -m pip install --requirement=requirements-tests.txt
 #  - LC_ALL=C pip install .
 script: 
   - python -m pytest
