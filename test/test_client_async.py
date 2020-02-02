@@ -35,7 +35,7 @@ else:
     IS_HIGH_SIERRA_OR_ABOVE = False
     SERIAL_PORT = "/dev/ptmx"
 if IS_WINDOWS:
-SERIAL_PORT = "COM1"
+    SERIAL_PORT = "COM1"
     
 # ---------------------------------------------------------------------------#
 # Fixture
