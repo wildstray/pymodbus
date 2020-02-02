@@ -17,7 +17,6 @@ matrix:
         - python3 --version
         - pip3 install -U pip
         - pip3 install -U pytest
-        - pip3 install codecov
         - pip3 install --requirement=requirements-checks.txt
         - pip3 install --requirement=requirements-tests.txt
     script: python3 -m pytest
@@ -30,7 +29,6 @@ matrix:
         - python3 --version
         - pip3 install -U pip
         - pip3 install -U pytest
-        - pip3 install codecov
         - pip3 install --requirement=requirements-checks.txt
         - pip3 install --requirement=requirements-tests.txt
     script: python3 -m pytest
@@ -69,25 +67,25 @@ matrix:
     env: PATH=/c/Python37:/c/Python35/Scripts:$PATH
     script: python -m pytest
 
-before_install:
-  - python --version
-  - if [ $TRAVIS_OS_NAME = osx ]; then brew update; fi
-  - if [ $TRAVIS_OS_NAME = osx ]; then brew install openssl; fi
+#before_install:
+#  - python --version
+#  - if [ $TRAVIS_OS_NAME = osx ]; then brew update; fi
+#  - if [ $TRAVIS_OS_NAME = osx ]; then brew install openssl; fi
 
 install:
   - pip install pytest
-  - pip install codecov
+#  - pip install codecov
   - pip install -U setuptools
-  - pip install coveralls
+#  - pip install coveralls
   - pip install --requirement=requirements-checks.txt
   - pip install --requirement=requirements-tests.txt
-  - LC_ALL=C pip install .
+#  - LC_ALL=C pip install .
 script: 
   - python -m pytest
 #script:
 #  - make test
-after_success:
-  - coveralls
+#after_success:
+#  - coveralls
 branches:
   except:
     - /^[0-9]/
