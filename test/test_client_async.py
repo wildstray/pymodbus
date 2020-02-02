@@ -26,14 +26,17 @@ from pymodbus.transaction import ModbusSocketFramer, ModbusRtuFramer, ModbusAsci
 from pymodbus.client.asynchronous.twisted import ModbusSerClientProtocol
 
 IS_DARWIN = platform.system().lower() == "darwin"
+IS_WINDOWS = platform.system().lower() == "windows"
 OSX_SIERRA = LooseVersion("10.12")
 if IS_DARWIN:
     IS_HIGH_SIERRA_OR_ABOVE = LooseVersion(platform.mac_ver()[0])
-    SERIAL_PORT = '/dev/ttyp0' if not IS_HIGH_SIERRA_OR_ABOVE else '/dev/ptyp0'
+    SERIAL_PORT = '/dev/ptyp0' if not IS_HIGH_SIERRA_OR_ABOVE else '/dev/ttyp0'
 else:
     IS_HIGH_SIERRA_OR_ABOVE = False
     SERIAL_PORT = "/dev/ptmx"
-
+if IS_WINDOWS:
+SERIAL_PORT = "COM1"
+    
 # ---------------------------------------------------------------------------#
 # Fixture
 # ---------------------------------------------------------------------------#
