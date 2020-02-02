@@ -40,6 +40,7 @@ matrix:
       - choco install python --version 3.5.4
       - python --version
       - python -m pip install --upgrade pip
+      - python -m pip install pywin32
       - pip install --upgrade pytest
 #      - pip3 install codecov
     env: PATH=/c/Python35:/c/Python35/Scripts:$PATH
@@ -50,6 +51,7 @@ matrix:
     before_install:
       - choco install python --version 3.6.8
       - python --version
+      - python -m pip install pywin32
       - python -m pip install --upgrade pip
       - pip install --upgrade pytest
 #      - pip3 install codecov
@@ -61,6 +63,7 @@ matrix:
     before_install:
       - choco install python --version 3.7.3
       - python --version
+      - python -m pip install pywin32
       - python -m pip install --upgrade pip
       - pip install --upgrade pytest
 #      - pip3 install codecov
