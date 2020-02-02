@@ -40,9 +40,9 @@ matrix:
       - choco install python --version 3.5.4
       - python --version
       - python -m pip install --upgrade pip
-      - pip3 install --upgrade pytest
-      - pip3 install codecov
-    env: PATH=/c/Python35:/c/Python35/Scripts:$PATH
+      - pip install --upgrade pytest
+#      - pip3 install codecov
+#    env: PATH=/c/Python35:/c/Python35/Scripts:$PATH
     script: python -m pytest
   - os: windows
     language: shell
@@ -51,9 +51,9 @@ matrix:
       - choco install python --version 3.6.8
       - python --version
       - python -m pip install --upgrade pip
-      - pip3 install --upgrade pytest
-      - pip3 install codecov
-    env: PATH=/c/Python36:/c/Python35/Scripts:$PATH
+      - pip install --upgrade pytest
+#      - pip3 install codecov
+#    env: PATH=/c/Python36:/c/Python35/Scripts:$PATH
     script: python -m pytest
   - os: windows
     language: shell
@@ -62,9 +62,9 @@ matrix:
       - choco install python --version 3.7.3
       - python --version
       - python -m pip install --upgrade pip
-      - pip3 install --upgrade pytest
-      - pip3 install codecov
-    env: PATH=/c/Python37:/c/Python35/Scripts:$PATH
+      - pip install --upgrade pytest
+#      - pip3 install codecov
+#    env: PATH=/c/Python37:/c/Python35/Scripts:$PATH
     script: python -m pytest
 
 #before_install:
