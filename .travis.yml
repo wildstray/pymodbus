@@ -17,10 +17,9 @@ matrix:
         - python --version
         - pip install --user --upgrade pip
         - pip install --user --upgrade pytest
-#        - pip install -U pip
-#        - pip install -U pytest       
-        - pip install --requirement=requirements-checks.txt
-        - pip install --requirement=requirements-tests.txt
+    install:
+        - pip install --user --requirement=requirements-checks.txt
+        - pip install --user --requirement=requirements-tests.txt
     script: python -m pytest
     after_success: python -m codecov
   - os: osx
