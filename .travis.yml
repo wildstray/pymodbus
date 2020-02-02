@@ -2,6 +2,8 @@ language: python
 matrix:
   include:
   - os: linux
+    python: "2.7"
+  - os: linux
     python: "3.5"
   - os: linux
     python: "3.6"
@@ -80,8 +82,10 @@ install:
   - pip install --requirement=requirements-checks.txt
   - pip install --requirement=requirements-tests.txt
   - LC_ALL=C pip install .
-script:
-  - make test
+script: 
+  - python -m pytest
+#script:
+#  - make test
 after_success:
   - coveralls
 branches:
