@@ -26,6 +26,7 @@ import platform
 from distutils.version import LooseVersion
 
 IS_DARWIN = platform.system().lower() == "darwin"
+IS_WINDOWS = platform.system().lower() == "windows"
 OSX_SIERRA = LooseVersion("10.12")
 if IS_DARWIN:
     IS_HIGH_SIERRA_OR_ABOVE = LooseVersion(platform.mac_ver()[0])
@@ -33,6 +34,8 @@ if IS_DARWIN:
 else:
     IS_HIGH_SIERRA_OR_ABOVE = False
     SERIAL_PORT = "/dev/ptmx"
+if IS_WINDOWS:
+    SERIAL_PORT = "COM1"
 #---------------------------------------------------------------------------#
 # Mock Classes
 #---------------------------------------------------------------------------#
